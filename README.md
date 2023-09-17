@@ -102,14 +102,14 @@ void RpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
 
 ##### `RpcProvider::OnMessage()`
 
-> 已建立连接用户的读写事件回调, 如果远程有一个 rpc 服务的调用请求, 那么 OnMessage 方法就会响应
+> 1. 已建立连接用户的读写事件回调, 如果远程有一个 rpc 服务的调用请求, 那么 OnMessage 方法就会响应
 在框架内部，RpcProvider 和 RpcConsumer 协商好之间通信用的 protobuf 数据类型格式
-> service_name method_name args 定义 proto 的 message 类型，进行数据头的序列化和反序列化
+> 2. 定义 proto 的 message 类型，进行数据头的序列化和反序列化
 header_str = header_size(4个字节) + service_name + method_name + args_size
 args_size
-> 例如: 16UserServiceLogin14zhang san123456
+> 3. 例如: 16UserServiceLogin14zhang san123456
 10 "10" 和 1000 "1000" 字节数统一成 4字节 => uint32
-> std::string  insert 和 copy 方法
+> 4. std::string  insert 和 copy 方法
 
 - OnMessage 回调函数中协商好 RpcProvider 和 RpcConsumer 之间通信用的 protobuf 数据类型
 
@@ -170,11 +170,13 @@ Zookeeper是在分布式环境中应用非常广泛，它的优秀功能很多�
 - 使用实例参考: [zookeeperutil.h](src/include/zookeeperutil.h) 以及 [zookeeperutil.cc](src/zookeeperutil.cc)
 
 
-### 5、一键构建
+### 5、框架构建
+
+![rpc.png](https://s2.loli.net/2023/09/17/ANKWm5LOyJv4kxU.png)
 
 - [CMakeLists.txt](/CMakeLists.txt): 注意多层目录的 build，体会 CMakeLists 在其中的用法
 
-- [autobuild.sh](/autobuild.sh)
+- [autobuild.sh](/autobuild.sh): 一键构建
 
 ### 6、参考
 - 施磊——【高级】C++项目-实现分布式网络通信框架-rpc通信原理
