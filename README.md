@@ -55,7 +55,7 @@ callee 通过 muduo 实现网络高并发处理
 
   
 
-#### RpcProvider
+#### [RpcServer] RpcProvider
 
 ##### `RpcProvider::NotifyService()`
 > 用于发布 rpc 方法的函数接口
@@ -105,8 +105,7 @@ void RpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
 > 1. 已建立连接用户的读写事件回调, 如果远程有一个 rpc 服务的调用请求, 那么 OnMessage 方法就会响应
 在框架内部，RpcProvider 和 RpcConsumer 协商好之间通信用的 protobuf 数据类型格式
 > 2. 定义 proto 的 message 类型，进行数据头的序列化和反序列化
-header_str = header_size(4个字节) + service_name + method_name + args_size
-args_size
+header_str (+ args_str) = header_size(4个字节) + service_name + method_name + args_size (+ args_str)
 > 3. 例如: 16UserServiceLogin14zhang san123456
 10 "10" 和 1000 "1000" 字节数统一成 4字节 => uint32
 > 4. std::string  insert 和 copy 方法
@@ -127,7 +126,7 @@ args_size
 4. `google::protobuf::NewCallback` 给下面的 method 方法的调用，绑定一个 Closure 的回调函数 SendRpcResponse
 
 
-#### MprpcChannel
+#### [RpcClient] MprpcChannel
 
 > 继承 RpcChannel 重写 CallMethod 方法，主要是是 caller 调用的
 
