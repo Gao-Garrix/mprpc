@@ -1,6 +1,6 @@
-## Muduo Protobuf Remote Procedure Call
+## Muduo Protobuf Remote Procedure Call (MPRPC)
 
-### 文件结构
+### 1、文件结构
 
 ```bash
 .
@@ -15,7 +15,7 @@
 └── test    # protobuf 使用实例
 ```
 
-### Protobuf
+### 2、Protobuf
 
 protobuf(protocol buffer) 是 google 的一种**数据交换**的格式，它独立于平台语言。google 提供了protobuf多种语言的实现: Java、C#、C++、Golang 和 Python，每一种实现都包含了相应语 言的编译器以及库文件。
 
@@ -36,14 +36,14 @@ make # 6. 编译源代码(时间比较长)
 - 使用实例参考：[test/protobuf](/test/protobuf/main.cc)
 
 
-### Muduo
+### 3、Muduo
 
 callee 通过 muduo 实现网络高并发处理
 
 - 安装参考：https://blog.csdn.net/QIANGWEIYUAN/article/details/89023980
 
 
-### MPRPC
+### 4、MPRPC
 
 #### MprpcApplication
 
@@ -170,12 +170,12 @@ Zookeeper是在分布式环境中应用非常广泛，它的优秀功能很多�
 - 使用实例参考: [zookeeperutil.h](src/include/zookeeperutil.h) 以及 [zookeeperutil.cc](src/zookeeperutil.cc)
 
 
-### 一键构建
+### 5、一键构建
 
 - [CMakeLists.txt](/CMakeLists.txt): 注意多层目录的 build，体会 CMakeLists 在其中的用法
 
 - [autobuild.sh](/autobuild.sh)
 
-### 参考
+### 6、参考
 - 施磊——【高级】C++项目-实现分布式网络通信框架-rpc通信原理
 - 剖析 muduo 网络库：https://github.com/EricPengShuai/muduo
