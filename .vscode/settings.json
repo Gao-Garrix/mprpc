@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.config": "editorconfig",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "string": "cpp"
+    }
+}
