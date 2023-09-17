@@ -4,10 +4,10 @@
 
 ```bash
 .
-├── autobuild.sh
+├── autobuild.sh # [一键构建]
 ├── bin     # 可执行文件目录
 ├── build   # make 构建目录
-├── CMakeLists.txt
+├── CMakeLists.txt # [cmake]
 ├── example # RPC caller 以及 callee 示例
 ├── lib     # libmprpc.a 静态库
 ├── README.md
@@ -169,9 +169,11 @@ Zookeeper是在分布式环境中应用非常广泛，它的优秀功能很多�
 - 使用实例参考: [zookeeperutil.h](src/include/zookeeperutil.h) 以及 [zookeeperutil.cc](src/zookeeperutil.cc)
 
 
-### 5、框架构建
+### 5、框架概览
 
 ![rpc.png](https://s2.loli.net/2023/09/17/ANKWm5LOyJv4kxU.png)
+
+![rpc-process.png](https://s2.loli.net/2023/09/17/iJwxthanRUOq9ur.png)
 
 - [CMakeLists.txt](/CMakeLists.txt): 注意多层目录的 build，体会 CMakeLists 在其中的用法
 
