@@ -178,8 +178,3 @@ Zookeeper是在分布式环境中应用非常广泛，它的优秀功能很多�
 - [CMakeLists.txt](/CMakeLists.txt): 注意多层目录的 build，体会 CMakeLists 在其中的用法
 
 - [autobuild.sh](/autobuild.sh): 一键构建
-
-### 6、参考
-- 施磊——【高级】C++项目-实现分布式网络通信框架-rpc通信原理
-- 剖析 muduo 网络库：https://github.com/EricPengShuai/muduo
-- Mprpc项目总结：https://blog.csdn.net/qq_42120843/article/details/130923561
